@@ -4,8 +4,8 @@ local cjson = require "cjson.safe"
 local qqwry = require("qqwry")
 
 local DATA="/apps/ip_locate/lua/web/qqwry.dat"
-local IP_NOT_FOUND = '{"status":404, "message":"IP地址找不到", "more info":"定位数据库中无法找到"}'
-local IP_INVALID = '{"status":400, "message":"查询参数无效", "more info":"查询参数无效"}'
+local IP_NOT_FOUND = '{"status":4004, "message":"IP地址找不到", "more info":"定位数据库中无法找到"}'
+local IP_INVALID = '{"status":4000, "message":"查询参数无效", "more info":"查询参数无效"}'
 
 ngx.update_time()
 local request_st = ngx.now()
@@ -28,7 +28,7 @@ if uri_args and uri_args["ip"] then
     result = qqwry.query(DATA, ip)
     if result then
         ngx.header.content_type = "application/json; charset=GB2312"
-        ngx.print(string.format('{"status":200, "message":"ok", "data":[{"ip": "%s", "geo": "%s", "location": "%s"}]}', ip, result[1], result[2]))
+        ngx.print(string.format('{"status":0, "message":"ok", "data":[{"ip": "%s", "geo": "%s", "location": "%s"}]}', ip, result[1], result[2]))
     else
         ngx.log(ngx.INFO, string.format("ip location not found:", ip))
         ngx.print(ngx.IP_NOT_FOUND)

@@ -12,7 +12,7 @@ IP定位查询
 
 ```json
 
-curl http://10.77.144.136:10582/query?ip=8.8.8.8
+curl http://127.0.0.1:10582/query?ip=8.8.8.8
 
 {
 "status": 200,

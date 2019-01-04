@@ -17,7 +17,7 @@ IP定位查询
 curl http://127.0.0.1:10582/query?ip=8.8.8.8
 
 {
-"status": 200,
+"status": 0,
 "message": "ok",
 "data": [
 {

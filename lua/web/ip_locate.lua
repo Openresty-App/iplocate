@@ -4,8 +4,8 @@ local cjson = require "cjson.safe"
 local qqwry = require("qqwry")
 
 local DATA="/apps/ip_locate/lua/web/qqwry.dat"
-local IP_NOT_FOUND = '{"status":4004, "message":"IP地址找不到", "more info":"定位数据库中无法找到"}'
-local IP_INVALID = '{"status":4000, "message":"查询参数无效", "more info":"查询参数无效"}'
+local IP_NOT_FOUND = '{"status":40004, "message":"IP地址找不到", "more info":"定位数据库中无法找到"}'
+local IP_INVALID = '{"status":40000, "message":"查询参数无效", "more info":"查询参数无效"}'
 
 ngx.update_time()
 local request_st = ngx.now()

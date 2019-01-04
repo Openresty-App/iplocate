@@ -284,3 +284,38 @@ coroutine 0:
 2019/01/04 20:46:52 [debug] 4234#4234: *14 [lua] ip_locate.lua:13: ngx.var.uri:[/query]
 2019/01/04 20:46:52 [info] 4234#4234: *14 [lua] ip_locate.lua:27: ip:202.106.0.20, client: 172.16.213.180, server: localhost, request: "GET /query?ip=202.106.0.20 HTTP/1.1", host: "172.16.213.183:10582"
 2019/01/04 20:46:52 [notice] 4234#4234: *14 [lua] ip_locate.lua:50: [ip_locate] response time:0.00099992752075195, client: 172.16.213.180, server: localhost, request: "GET /query?ip=202.106.0.20 HTTP/1.1", host: "172.16.213.183:10582"
+2019/01/04 21:09:12 [debug] 4234#4234: *15 [lua] ip_locate.lua:13: ngx.var.uri:[/query]
+2019/01/04 21:09:12 [info] 4234#4234: *15 [lua] ip_locate.lua:27: ip:202.106.0.20, client: 172.16.213.180, server: localhost, request: "GET /query?ip=202.106.0.20 HTTP/1.1", host: "172.16.213.183:10582"
+2019/01/04 21:09:12 [notice] 4234#4234: *15 [lua] ip_locate.lua:50: [ip_locate] response time:0, client: 172.16.213.180, server: localhost, request: "GET /query?ip=202.106.0.20 HTTP/1.1", host: "172.16.213.183:10582"
+2019/01/04 21:09:41 [notice] 15229#15229: signal process started
+2019/01/04 21:09:41 [notice] 4232#4232: signal 1 (SIGHUP) received from 15229, reconfiguring
+2019/01/04 21:09:41 [notice] 4232#4232: reconfiguring
+2019/01/04 21:09:41 [notice] 4232#4232: using the "epoll" event method
+2019/01/04 21:09:41 [notice] 4232#4232: start worker processes
+2019/01/04 21:09:41 [notice] 4232#4232: start worker process 15230
+2019/01/04 21:09:41 [notice] 4232#4232: start worker process 15231
+2019/01/04 21:09:41 [notice] 4232#4232: start worker process 15232
+2019/01/04 21:09:41 [notice] 4232#4232: start worker process 15233
+2019/01/04 21:09:41 [notice] 4233#4233: gracefully shutting down
+2019/01/04 21:09:41 [notice] 4234#4234: gracefully shutting down
+2019/01/04 21:09:41 [notice] 4233#4233: exiting
+2019/01/04 21:09:41 [notice] 4234#4234: exiting
+2019/01/04 21:09:41 [notice] 4234#4234: exit
+2019/01/04 21:09:41 [notice] 4233#4233: exit
+2019/01/04 21:09:41 [notice] 4235#4235: gracefully shutting down
+2019/01/04 21:09:41 [notice] 4235#4235: exiting
+2019/01/04 21:09:41 [notice] 4236#4236: gracefully shutting down
+2019/01/04 21:09:41 [notice] 4236#4236: exiting
+2019/01/04 21:09:41 [notice] 4235#4235: exit
+2019/01/04 21:09:41 [notice] 4236#4236: exit
+2019/01/04 21:09:41 [notice] 4232#4232: signal 17 (SIGCHLD) received from 4234
+2019/01/04 21:09:41 [notice] 4232#4232: worker process 4234 exited with code 0
+2019/01/04 21:09:41 [notice] 4232#4232: worker process 4235 exited with code 0
+2019/01/04 21:09:41 [notice] 4232#4232: signal 29 (SIGIO) received
+2019/01/04 21:09:41 [notice] 4232#4232: signal 17 (SIGCHLD) received from 4233
+2019/01/04 21:09:41 [notice] 4232#4232: worker process 4233 exited with code 0
+2019/01/04 21:09:41 [notice] 4232#4232: worker process 4236 exited with code 0
+2019/01/04 21:09:41 [notice] 4232#4232: signal 29 (SIGIO) received
+2019/01/04 21:09:45 [debug] 15232#15232: *16 [lua] ip_locate.lua:13: ngx.var.uri:[/query]
+2019/01/04 21:09:45 [info] 15232#15232: *16 [lua] ip_locate.lua:27: ip:202.106.0.20, client: 172.16.213.180, server: localhost, request: "GET /query?ip=202.106.0.20 HTTP/1.1", host: "172.16.213.183:10582"
+2019/01/04 21:09:45 [notice] 15232#15232: *16 [lua] ip_locate.lua:50: [ip_locate] response time:0, client: 172.16.213.180, server: localhost, request: "GET /query?ip=202.106.0.20 HTTP/1.1", host: "172.16.213.183:10582"

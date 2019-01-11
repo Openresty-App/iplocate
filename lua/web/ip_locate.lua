@@ -31,7 +31,7 @@ if uri_args and uri_args["ip"] then
         ngx.print(string.format('{"status":0, "message":"ok", "data":[{"ip": "%s", "geo": "%s", "location": "%s"}]}', ip, result[1], result[2]))
     else
         ngx.log(ngx.INFO, string.format("ip location not found:", ip))
-        ngx.print(ngx.IP_NOT_FOUND)
+        ngx.print(IP_NOT_FOUND)
         ngx.exit(ngx.HTTP_OK)
     end
     -- ngx.print(qqwry.query(ip)[1])

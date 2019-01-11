@@ -8,7 +8,7 @@ local DATA="/apps/iplocate/lua/web/qqwry.dat"
 local IP_NOT_FOUND = '{"status":404004, "message":"IP地址找不到", "info":"定位数据库中无法找到"}'
 local IP_INVALID = '{"status":4040000, "message":"查询参数无效", "info":"查询参数无效"}'
 
-local function cover(data)
+local function iconv2utf8(data)
     local from   = 'GB18030'
     local to  = 'UTF-8'
 
@@ -45,7 +45,7 @@ if uri_args and uri_args["ip"] then
     result = qqwry.query(DATA, ip)
     if result then
         ngx.header.content_type = "application/json; charset=UTF-8"
-        ngx.print(string.format('{"status":0, "message":"ok", "data":[{"ip": "%s", "geo": "%s", "location": "%s"}]}', ip, cover(result[1]), cover(result[2])))
+        ngx.print(string.format('{"status":0, "message":"ok", "data":[{"ip": "%s", "geo": "%s", "location": "%s"}]}', ip, iconv2utf8(result[1]), iconv2utf8(result[2])))
     else
         ngx.log(ngx.INFO, string.format("ip location not found:", ip))
         ngx.print(IP_NOT_FOUND)

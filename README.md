@@ -17,15 +17,15 @@ IP定位查询
 curl http://127.0.0.1:10582/query?ip=8.8.8.8
 
 {
-"status": 0,
-"message": "ok",
-"data": [
-{
-"ip": "8.8.8.8",
-"geo": "美国",
-"location": "加利福尼亚州圣克拉拉县山景市谷歌公司DNS服务器"
-}
-]
+    "status": 0,
+    "message": "ok",
+    "data": [
+        {
+            "ip": "8.8.8.8",
+            "geo": "美国",
+            "location": "加利福尼亚州圣克拉拉县山景市谷歌公司DNS服务器"
+        }
+    ]
 }
 ```
 
@@ -36,6 +36,33 @@ curl http://127.0.0.1:10582/query?ip=8.8.8.8
 三. Todo
 -----------
 
-1. 纯真库默认编码是GB2312，需要改为UTF-8
-2. 纯真库的数据文件需要使用绝对路径, 需要改为相对路径
+1. 纯真库的数据文件需要使用绝对路径, 需要改为相对路径
+2. 数据文件缓存到内存
 
+
+四. Depend
+-----------
+
+```
+sudo yum install openresty-opm
+sudo opm install xiaooloong/lua-resty-iconv
+```
+
+五. Performance
+-----------
+
+```
+Running 10s test @ http://172.16.213.183:10582/query?ip=8.8.8.8
+  10 threads and 1000 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   123.04ms   87.80ms 564.50ms   71.38%
+    Req/Sec   786.95    126.04     2.18k    81.52%
+  Latency Distribution
+     50%  104.11ms
+     75%  167.63ms
+     90%  245.91ms
+     99%  383.84ms
+  78418 requests in 10.10s, 22.14MB read
+Requests/sec:   7765.10
+Transfer/sec:      2.19MB
+```

@@ -2,10 +2,27 @@
 local ngx = require "ngx"
 local cjson = require "cjson.safe"
 local qqwry = require("qqwry")
+local iconv = require 'resty.iconv'
 
 local DATA="/apps/iplocate/lua/web/qqwry.dat"
 local IP_NOT_FOUND = '{"status":404004, "message":"IP地址找不到", "info":"定位数据库中无法找到"}'
 local IP_INVALID = '{"status":4040000, "message":"查询参数无效", "info":"查询参数无效"}'
+
+local function cover(data)
+    local from   = 'GB18030'
+    local to  = 'UTF-8'
+
+    local i, err = iconv:new(to, from)
+    if not i then
+        return err
+    end
+
+    local t, count = i:convert(data)
+    if not t then
+        return count
+    end
+    return t
+end
 
 ngx.update_time()
 local request_st = ngx.now()
@@ -27,8 +44,8 @@ if uri_args and uri_args["ip"] then
     ngx.log(ngx.INFO, "ip:", ip)
     result = qqwry.query(DATA, ip)
     if result then
-        ngx.header.content_type = "application/json; charset=GB2312"
-        ngx.print(string.format('{"status":0, "message":"ok", "data":[{"ip": "%s", "geo": "%s", "location": "%s"}]}', ip, result[1], result[2]))
+        ngx.header.content_type = "application/json; charset=UTF-8"
+        ngx.print(string.format('{"status":0, "message":"ok", "data":[{"ip": "%s", "geo": "%s", "location": "%s"}]}', ip, cover(result[1]), cover(result[2])))
     else
         ngx.log(ngx.INFO, string.format("ip location not found:", ip))
         ngx.print(IP_NOT_FOUND)

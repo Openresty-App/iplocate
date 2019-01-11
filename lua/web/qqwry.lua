@@ -111,7 +111,7 @@ function query(data, ip)
 
     local offset = locateIpIndex(ip2long(ip), s2nBE(qqwry:read(4)), s2nBE(qqwry:read(4)))
     local loc1, loc2
-    loc1,offset = getOffsetLoc(offset + 4)
+    loc1, offset = getOffsetLoc(offset + 4)
     loc2 = getOffsetLoc(offset)
     qqwry:close()
     return {loc1, loc2}

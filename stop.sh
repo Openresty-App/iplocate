@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sudo /usr/local/openresty/nginx/sbin/nginx -c /apps/ip_locate/nginx.conf -p /apps/ip_locate -s stop
+sudo /usr/local/openresty/nginx/sbin/nginx -c /apps/iplocate/nginx.conf -p /apps/iplocate -s stop

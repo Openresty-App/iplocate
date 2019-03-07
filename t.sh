@@ -1,6 +1,6 @@
 #/bin/bash
 
-curl http://127.0.0.1:10905/query?ip=117.136.19.28
+curl http://127.0.0.1:10905/query?ip=109.146.21.202
 echo ""
 
 curl http://127.0.0.1:10905/query?ip=8.8.8.8

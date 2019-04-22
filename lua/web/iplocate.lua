@@ -35,7 +35,7 @@ if ngx.var.uri ~= "/query" then
     return
 end
 
-uri_args = ngx.req.get_uri_args()
+local uri_args = ngx.req.get_uri_args()
 
 ngx.header.content_type = "application/json; charset=UTF-8"
 

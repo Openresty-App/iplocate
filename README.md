@@ -14,7 +14,7 @@ IP定位查询
 
 ```json
 
-curl http://127.0.0.1:10582/query?ip=8.8.8.8
+curl http://127.0.0.1:80/query?ip=8.8.8.8
 
 {
     "status": 0,
@@ -44,6 +44,9 @@ curl http://127.0.0.1:10582/query?ip=8.8.8.8
 -----------
 
 ```
+sudo yum install yum-utils
+sudo yum-config-manager --add-repo https://openresty.org/package/centos/openresty.repo
+sudo yum install openresty
 sudo yum install openresty-opm
 sudo opm install xiaooloong/lua-resty-iconv
 ```
@@ -52,7 +55,7 @@ sudo opm install xiaooloong/lua-resty-iconv
 -----------
 
 ```
-Running 10s test @ http://172.16.213.183:10582/query?ip=8.8.8.8
+Running 10s test @ http://172.16.213.183:80/query?ip=8.8.8.8
   10 threads and 1000 connections
   Thread Stats   Avg      Stdev     Max   +/- Stdev
     Latency   123.04ms   87.80ms 564.50ms   71.38%
